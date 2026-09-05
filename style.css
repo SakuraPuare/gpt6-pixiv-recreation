@@ -9,7 +9,7 @@
 html, body { margin: 0; min-height: 100%; background: #fff; }
 .page { width: 100%; }
 .artwork { margin: 0; width: 100%; line-height: 0; }
-.artwork img { display: block; width: 100%; height: auto; max-width: 2756px; margin: 0 auto; }
+.artwork object { display: block; width: 100%; height: auto; aspect-ratio: 2756 / 4547; max-width: 2756px; margin: 0 auto; border: 0; }
 .credit { display: flex; flex-wrap: wrap; align-items: baseline; gap: .35rem .7rem; max-width: 68rem; margin: 0 auto; padding: 1rem 1.25rem 1.4rem; font-size: .82rem; line-height: 1.5; color: #765464; }
 .credit strong { color: #8f3f63; }
 .credit a { color: #8f3f63; text-underline-offset: .18em; }
