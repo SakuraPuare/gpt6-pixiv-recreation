@@ -9,11 +9,19 @@
   </head>
   <body>
     <main class="page">
-      <figure class="artwork">
-        <object data="./assets/131538488-vector.svg" type="image/svg+xml" aria-label="Vector recreation of the original pink floral illustration">
-          Vector recreation unavailable.
-        </object>
-      </figure>
+      <section class="stage" aria-label="Layered vector artwork presentation">
+        <div class="backdrop" aria-hidden="true">
+          <span class="petal petal-a"></span><span class="petal petal-b"></span><span class="petal petal-c"></span>
+        </div>
+        <figure class="artwork">
+          <object data="./assets/131538488-vector.svg" type="image/svg+xml" aria-label="Vector recreation of the original pink floral illustration">
+            Vector recreation unavailable.
+          </object>
+        </figure>
+        <div class="foreground" aria-hidden="true">
+          <span class="glint glint-a"></span><span class="glint glint-b"></span><span class="glint glint-c"></span><span class="glint glint-d"></span>
+        </div>
+      </section>
       <footer class="credit">
         <strong>GPT-6 HTML + CSS + SVG vector recreation</strong>
         <span>Inspired by the original artwork on</span>

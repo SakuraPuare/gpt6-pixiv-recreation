@@ -7,9 +7,19 @@
 
 * { box-sizing: border-box; }
 html, body { margin: 0; min-height: 100%; background: #fff; }
-.page { width: 100%; }
-.artwork { margin: 0; width: 100%; line-height: 0; }
-.artwork object { display: block; width: 100%; height: auto; aspect-ratio: 2756 / 4547; max-width: 2756px; margin: 0 auto; border: 0; }
+.page { width: 100%; overflow-x: clip; }
+.stage { position: relative; width: min(100%, 2756px); margin: 0 auto; overflow: hidden; background: #fffafd; }
+.artwork { position: relative; z-index: 2; margin: 0; width: 100%; line-height: 0; }
+.artwork object { display: block; width: 100%; height: auto; aspect-ratio: 2756 / 4547; border: 0; }
+.backdrop, .foreground { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.backdrop { z-index: 1; background: radial-gradient(ellipse at 45% 40%, rgba(255,255,255,.12), transparent 60%); }
+.foreground { z-index: 3; }
+.petal { position: absolute; display: block; width: clamp(32px, 8vw, 180px); aspect-ratio: .65; border-radius: 70% 30% 65% 35%; background: linear-gradient(135deg, rgba(255,244,248,.12), rgba(228,112,157,.3)); filter: blur(.2px); opacity: .6; transform: rotate(var(--angle)); animation: petal-drift var(--duration) ease-in-out var(--delay) infinite alternate; }
+.petal-a { left: 6%; top: 18%; --angle: -28deg; --duration: 9s; --delay: -2s; }
+.petal-b { right: 7%; top: 37%; --angle: 38deg; --duration: 12s; --delay: -6s; }
+.petal-c { right: 14%; bottom: 14%; --angle: 112deg; --duration: 10s; --delay: -4s; }
+.glint { position: absolute; width: clamp(3px, .55vw, 10px); aspect-ratio: 1; border-radius: 50%; background: rgba(255,255,255,.9); box-shadow: 0 0 12px 4px rgba(255,220,232,.75); opacity: 0; animation: glint-pulse 5.5s ease-in-out var(--delay) infinite; }
+.glint-a { left: 17%; top: 31%; --delay: -1s; }.glint-b { left: 77%; top: 26%; --delay: -3.2s; }.glint-c { left: 66%; top: 69%; --delay: -4.1s; }.glint-d { left: 30%; top: 82%; --delay: -2.3s; }
 .credit { display: flex; flex-wrap: wrap; align-items: baseline; gap: .35rem .7rem; max-width: 68rem; margin: 0 auto; padding: 1rem 1.25rem 1.4rem; font-size: .82rem; line-height: 1.5; color: #765464; }
 .credit strong { color: #8f3f63; }
 .credit a { color: #8f3f63; text-underline-offset: .18em; }
@@ -17,3 +27,10 @@ html, body { margin: 0; min-height: 100%; background: #fff; }
   .credit { display: block; padding: .8rem 1rem 1.1rem; font-size: .74rem; }
   .credit strong, .credit span, .credit a { display: block; }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .petal, .glint { animation: none; }
+}
+
+@keyframes petal-drift { from { translate: 0 0; } to { translate: 0 -14px; } }
+@keyframes glint-pulse { 0%, 65%, 100% { opacity: 0; transform: scale(.55); } 72% { opacity: .9; transform: scale(1); } 80% { opacity: .1; transform: scale(.75); } }
