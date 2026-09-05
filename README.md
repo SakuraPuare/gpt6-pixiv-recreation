@@ -4,7 +4,7 @@ This GitHub Pages site presents a vector recreation generated from the supplied 
 
 ## Live page
 
-[Open the GPT-6 pixel-faithful presentation](https://sakurapuare.github.io/gpt6-pixiv-recreation/)
+[Open the GPT-6 vector presentation](https://sakurapuare.github.io/gpt6-pixiv-recreation/)
 
 ## Attribution
 
