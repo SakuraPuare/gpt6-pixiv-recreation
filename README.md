@@ -1,8 +1,12 @@
 # GPT-6 Pixiv Recreation
 
-This project explores how far a browser can take a reference-led illustration using HTML, CSS, and SVG paths. The goal is to make the composition feel hand-layered: background atmosphere first, the vector artwork second, and restrained foreground motion and highlights last. The SVG contains no embedded raster image and no `<image>` or `<img>` element.
+有个傻逼在群里说 GPT-6 可以出图
 
-The page is deliberately dependency-free. Its responsive stage keeps the original artwork ratio, scales from the full viewport width, clips horizontal overflow, and respects `prefers-reduced-motion`. CSS animation is split by layer so the background drifts behind the artwork while glints appear in front, preserving the visual hierarchy of a hand-composed scene.
+<img width="520" height="821" alt="image" src="https://github.com/user-attachments/assets/182584ab-496c-40ac-b577-b6e860f69a48" />
+
+又 核弹，瘫坐 上了 
+
+这是实际效果
 
 ## Live page
 
